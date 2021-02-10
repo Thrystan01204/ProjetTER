@@ -6,7 +6,7 @@ import tkinter
 from cv2 import cv2
 
 
-face_cascade=cv2.CascadeClassifier("C:/Users/Corentin/OneDrive/L3/Semestre2/EEEA/ProjetTER/haarcascade_frontalface_alt2.xml")#chemin absolu pour ce fichier
+face_cascade=cv2.CascadeClassifier("C:/Users/Corentin/OneDrive/L3/Semestre2/EEEA/ProjetTER/haarcascade_fullbody.xml")#chemin absolu pour ce fichier
 cap=cv2.VideoCapture("http://192.168.43.1:4747/video")#Adresse IP de la camera, pour tester, installer une applis qui transforme le tel en camera IP
 
 while True:
