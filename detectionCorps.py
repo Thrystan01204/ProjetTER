@@ -9,9 +9,17 @@ from cv2 import cv2
 face_cascade=cv2.CascadeClassifier("C:/Users/Corentin/OneDrive/L3/Semestre2/EEEA/ProjetTER/haarcascade_fullbody.xml")#chemin absolu pour ce fichier
 cap=cv2.VideoCapture("http://192.168.43.1:4747/video")#Adresse IP de la camera, pour tester, installer une applis qui transforme le tel en camera IP
 
+#Reglage du nombre d'image par seconde
+maximum_fps = 5 #une image sur maximum_fps sera affiché
+counter = 0
+#Reglage de la résolution du flux video
+video_width= 1280
+video_height= 720
+
+
 while True:
     ret, frame=cap.read()
-    frame = cv2.resize(frame, (256, 144)) 
+    frame = cv2.resize(frame, (video_width, video_height)) 
     tickmark=cv2.getTickCount()
     gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     face=face_cascade.detectMultiScale(gray, 1.3, 5)
