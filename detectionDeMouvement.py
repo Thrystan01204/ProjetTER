@@ -4,7 +4,7 @@ import time
 import numpy as np
 from cv2 import cv2
 
-cap=cv2.VideoCapture("http://192.168.43.1:4747/video")#Adresse IP de la camera, pour tester, installer une applis qui transforme le tel en camera IP
+cap=cv2.VideoCapture("http://192.168.43.1:4747/video")#Adresse IP de la camera, pour tester, installer une applis qui transforme le tel en camera IP droidCAM pour android
 
 kernel_blur=5
 seuil=15
