@@ -1,21 +1,14 @@
 import tkinter as tk
-from tkinter.messagebox import *
 
-class application(tk.Tk):
-    # Méthode d'initialisation de la fenêtre Tkinter
-    def __init__(self):
-        tk.Tk.__init__(self)
-        self.size = 500
-        self.creer_widgets()
+root = tk.Tk()
 
-    def creer_widgets(self):
-        # Création canvas
-        self.canv = tk.Canvas(self, bg="gray", height=250, width=100)
-        self.canv.pack(side=tk.TOP)
-        tk.Button(self, text="Bouton 1").pack(side=tk.LEFT, padx=5, pady=5)
-        tk.Button(self, text="Bouton 2").pack(side=tk.RIGHT, padx=5, pady=5)
+canvas = tk.Canvas(root, height=800, width=1000)
+canvas.pack()
 
-if __name__ == "__main__":
-    app = application()
-    app.title("Test interface")
-    app.mainloop()
+frame = tk.Frame(root, bg="blue")
+frame.place(relheight=0.9, relwidth=1)
+
+button = tk.Button(frame, text="Coucou", bg="white", fg="black", command=root.destroy)
+button.pack(side=tk.LEFT)
+
+root.mainloop()
