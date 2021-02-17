@@ -1,12 +1,10 @@
 from cv2 import cv2
 import numpy as np
 from tkinter import * 
-from PIL import Image,ImageTk
+from PIL import Image
+from PIL import ImageTk
 import datetime
-def PhotoLelo():
-    image = Image.fromarray(img1)
-    time = str(datetime.datetime.now().today()).replace(":", " ")+".jpg"
-    image.save(time)
+
 
 root = Tk()
 root.geometry("700x540")
@@ -16,8 +14,7 @@ f1 = LabelFrame(root, bg="red")
 f1.pack()
 L1 = Label(f1, bg="red")
 L1.pack()
-cap = cv2.VideoCapture(2)
-Button(root, text="Take Snapchot", font=("times new roman", 20, "bold"), bg="black", fg="red", command=PhotoLelo).pack(fill=X, expand=True, pady=20)
+cap = cv2.VideoCapture(0)
 
 while True:
     img = cap.read()[1]
