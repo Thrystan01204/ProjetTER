@@ -3,7 +3,6 @@ import numpy as np
 from tkinter import * 
 from PIL import Image
 from PIL import ImageTk
-import datetime
 
 
 root = Tk()
@@ -17,8 +16,7 @@ L1.pack()
 cap = cv2.VideoCapture(0)
 
 while True:
-    img = cap.read()[1]
-    # img = cv2.flip(img, 1)
+    img = cap.read()[1]*
     img1 = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = ImageTk.PhotoImage(Image.fromarray(img1))
     L1['image'] = img
