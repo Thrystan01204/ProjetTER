@@ -46,19 +46,24 @@ class Interface(tk.Tk):
         self.conteneur.grid(column=0, row=0)
 
         self.video = tk.Label(self.conteneur, bg="black")
-        self.video.grid(column=0, row=0)
+        self.video.grid(column=0, row=1)
 
         self.cap = cv2.VideoCapture(self.webcam)
 
+    def update_video(self):
         self.img = self.cap.read()[1]
         self.img1 = cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB)
         self.img = ImageTk.PhotoImage(Image.fromarray(self.img1))
 
         self.video['image'] = self.img
+        self.update()
+
+    def get_webcam(self):
+        return self.webcam
 
 
 app = Interface()
 app.title('Test')
 
 while True:
-    app.update()
+    app.update_video()
