@@ -38,15 +38,17 @@ class Interface(tk.Tk):
 
     def initialize(self):
         self.grid()
-        #self.canvas = tk.Canvas(height=800, width=1500)
         self.frame = tk.Frame(self.parent, bg="blue")
-        self.frame.grid(column=0, row=0)
+        self.frame.grid(colum=0, row=1)
+
+        self.button = tk.Button(text=('Test button'))
+        self.button.grid(column=1, row=0)
 
         self.conteneur = tk.LabelFrame(self.frame, bg="black")
         self.conteneur.grid(column=0, row=0)
 
         self.video = tk.Label(self.conteneur, bg="black")
-        self.video.grid(column=0, row=1)
+        self.video.grid(column=0, row=0)
 
         self.cap = cv2.VideoCapture(self.webcam)
 
@@ -60,6 +62,24 @@ class Interface(tk.Tk):
 
     def get_webcam(self):
         return self.webcam
+
+
+class OpenCV(cv2):
+    def __init__(self, webcam) -> None:
+        super().__init__()
+        self.hog = cv2.HOGDescriptor()
+        self.hog.setSVMDetector( cv2.HOGDescriptor_getDefaultPeopleDetector() )
+
+    def draw_detections(self, img, rects, thickness = 1):
+        for x, y, w, h in rects:
+            # the HOG detector returns slightly larger rectangles than the real objects.
+            # so we slightly shrink the rectangles to get a nicer output.
+            self.pad_w, self.pad_h = int(0.15*w), int(0.05*h)
+            cv2.rectangle(img, (x+self.pad_w, y+self.pad_h), (x+w-self.pad_w, y+h-self.pad_h), (0, 0, 255), thickness)
+    
+    def update_detection(self):
+        return 0
+
 
 
 app = Interface()
