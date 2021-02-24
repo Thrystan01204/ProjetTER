@@ -1,0 +1,69 @@
+from __future__ import print_function
+import cv2 as cv
+import argparse
+
+#programme d'extraction de fond d'image:
+#(méthode de soustraction des valeurs pixels en valeurs absolues)
+
+
+#on ajoute différents arguments d'entrée à la ligne de commande pour
+#le traitement du flux vidéo
+
+parser = argparse.ArgumentParser(description='This program shows how to use background subtraction methods provided by \
+                                              OpenCV. You can process both videos and images.')
+parser.add_argument('--input', type=str, help='Path to a video or a sequence of image.', default='vtest.avi')
+#argument 'input' qui contient le chemin d'accès à une vidéo ou séquences d'images
+
+parser.add_argument('--algo', type=str, help='Background subtraction method (KNN, MOG2).', default='MOG2')
+#argument 'algo' qui définit le type de méthode pour la soustraction d'image (KNN, MOG2)
+
+args = parser.parse_args()
+
+
+
+# [create]
+#Creation d'un fond de masque d'image (méthodes principales d'instanciaton)
+
+if args.algo == 'MOG2':
+    backSub = cv.createBackgroundSubtractorMOG2()
+else:
+    backSub = cv.createBackgroundSubtractorKNN()
+## [create]
+
+## [capture]
+#On récupère le fichier vidéo et on le stoque dans une variable
+capture = cv.VideoCapture(cv.samples.findFileOrKeep(args.input))
+if not capture.isOpened():
+    print('Unable to open: ' + args.input)
+    exit(0)
+
+
+#boucle qui v lire chaque image vidéo
+while True:
+    #lit chaque séquence d'image de la vidéo jusqu'à se qu'il y en ait plus(break)
+    ret, frame = capture.read()
+    if frame is None:
+        break
+
+    ## [apply]
+    #Met à jour le modele de masque de fond qu'on utilise (soustraction pixel)
+    fgMask = backSub.apply(frame)
+    
+
+    ## [display_frame_number]
+    #création d' un rectangle qui va stocker l'image
+    cv.rectangle(frame, (10, 2), (100,20), (255,255,255), -1)
+    #ajout du numéro de la séquence d'image dans notre rectangle
+    cv.putText(frame, str(capture.get(cv.CAP_PROP_POS_FRAMES)), (15, 15),
+               cv.FONT_HERSHEY_SIMPLEX, 0.5 , (0,0,0))
+    
+
+    ## [show]
+    #affichage graphique de l'image de fond
+    cv.imshow('Frame', frame)
+    cv.imshow('FG Mask', fgMask)
+   
+    #touche 'q' => fin de l'affichage
+    keyboard = cv.waitKey(30)
+    if keyboard == 'q' or keyboard == 27:
+        break
