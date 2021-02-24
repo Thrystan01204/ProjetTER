@@ -30,19 +30,20 @@ from cv2 import cv2
 #     root.update()
 
 class Interface(tk.Tk):
-    def __init__(self, parent=None, webcam=0):
+    def __init__(self, parent=None, webcam=0, video=None):
         tk.Tk.__init__(self, parent)
         self.webcam = webcam
         self.parent = parent
         self.initialize()
+        self.video = video
 
     def initialize(self):
         self.grid()
         self.frame = tk.Frame(self.parent, bg="blue")
-        self.frame.grid(colum=0, row=1)
+        self.frame.grid(column=0, row=1, columnspan=2)
 
         self.button = tk.Button(text=('Test button'))
-        self.button.grid(column=1, row=0)
+        self.button.grid(column=0, row=0)
 
         self.conteneur = tk.LabelFrame(self.frame, bg="black")
         self.conteneur.grid(column=0, row=0)
@@ -53,36 +54,39 @@ class Interface(tk.Tk):
         self.cap = cv2.VideoCapture(self.webcam)
 
     def update_video(self):
-        self.img = self.cap.read()[1]
-        self.img1 = cv2.cvtColor(self.img, cv2.COLOR_BGR2RGB)
-        self.img = ImageTk.PhotoImage(Image.fromarray(self.img1))
-
-        self.video['image'] = self.img
+        self.video.update_video()
+        self.video['image'] = self.video.img
         self.update()
 
     def get_webcam(self):
         return self.webcam
 
-
-class OpenCV(cv2):
-    def __init__(self, webcam) -> None:
-        super().__init__()
+class video():
+    def __init__(self, video_width, video_height):
         self.hog = cv2.HOGDescriptor()
         self.hog.setSVMDetector( cv2.HOGDescriptor_getDefaultPeopleDetector() )
+        self.cap = cv2.VideoCapture(0)
 
-    def draw_detections(self, img, rects, thickness = 1):
+        self.video_width = video_width
+        self.video_height = video_height
+
+    def update_video(self):
+        _,self.frame=self.cap.read()
+        self.frame = cv2.resize(self.frame, (self.video_width, self.video_height)) 
+        self.found, self.w = self.hog.detectMultiScale(self.frame, winStride=(8,8), padding=(32,32), scale=1.05)
+        self.draw_detections(self.frame, self.found)
+        self.img1 = cv2.cvtColor(self.frame, cv2.COLOR_BGR2RGB)
+        self.img = ImageTk.PhotoImage(Image.fromarray(self.img1))
+
+    def draw_detections(img, rects, thickness = 1):
         for x, y, w, h in rects:
             # the HOG detector returns slightly larger rectangles than the real objects.
             # so we slightly shrink the rectangles to get a nicer output.
-            self.pad_w, self.pad_h = int(0.15*w), int(0.05*h)
-            cv2.rectangle(img, (x+self.pad_w, y+self.pad_h), (x+w-self.pad_w, y+h-self.pad_h), (0, 0, 255), thickness)
-    
-    def update_detection(self):
-        return 0
+            pad_w, pad_h = int(0.15*w), int(0.05*h)
+            cv2.rectangle(img, (x+pad_w, y+pad_h), (x+w-pad_w, y+h-pad_h), (0, 0, 255), thickness)
 
-
-
-app = Interface()
+vid = video(256*2, 144*2)
+app = Interface(video=vid)
 app.title('Test')
 
 while True:
