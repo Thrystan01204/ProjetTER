@@ -7,6 +7,7 @@ import argparse
 import numpy as np
 
 
+global kernel_blur
 kernel_blur=5
 seuil=15
 surface=1000
@@ -33,15 +34,33 @@ args = parser.parse_args()
 
 root = tk.Tk()
 
-canvas = tk.Canvas(root)
-canvas.grid(column=0, row=0)
+# Boutons
+def addBlur(kernel_blur):
+    kernel_blur = min(43, kernel_blur+2)
+addKernelBlurBT = tk.Button(root, text="Add blur", command=addBlur(kernel_blur))
+addKernelBlurBT.grid(column=0, row=0)
 
+labeTest = tk.Label(root, background="red", text=kernel_blur)
+labeTest.grid(column=1, row=0)
+
+def lessBlur():
+    max(1, kernel_blur-2)
+lessKernelBlurBT = tk.Button(root, text="Less blur", command=lessBlur)
+
+def addSurface():
+    surface+=1000
+addSurfaceBT = tk.Button(root, text="add Surface", command=addSurface)
+
+def lessSurface():
+    surface=max(1000, surface-1000)
+    return surface
+
+
+# Vidéo
 frame = tk.Frame(root, bg="blue")
-frame.grid(column=0, row=0)
-
+frame.grid(column=0, row=1)
 conteneur = tk.LabelFrame(frame, bg="black")
 conteneur.grid(column=0, row=0)
-
 video = tk.Label(conteneur, bg="black")
 video.grid(column=0, row=0)
 
@@ -65,7 +84,7 @@ if not capture.isOpened():
 while True:
     #lit chaque séquence d'image de la vidéo jusqu'à se qu'il y en ait plus(break)
     ret, frame = capture.read()
-    frame= cv.resize(frame, (1280, 720));
+    frame= cv.resize(frame, (1280, 720))
     if frame is None:
         break
     ## [apply]
@@ -121,4 +140,5 @@ while True:
     img1 = cv.cvtColor(frame_contour, cv.COLOR_BGR2RGB)
     img = ImageTk.PhotoImage(Image.fromarray(img1))
     video['image'] = img
+
     root.update()
