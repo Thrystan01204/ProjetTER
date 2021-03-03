@@ -1,0 +1,81 @@
+import numpy as np
+from skimage import transform
+from scipy import *
+from scipy.ndimage import *
+from scipy.ndimage import find_objects
+import re
+
+#re.findall('\d+', chaine)[0]
+
+#[TEST]
+##img1 = np.zeros((20,6))
+#img1[14:16,1:4] = 255
+#img1[4:6,4:7] = 255
+#img2 = transform.rotate(img1, 45)
+##
+
+
+#fonction qui récupère l'image et retourne les valeurs de spositions
+# des groupes de pixels avec une couleur >0 (couleur blanche dans le caas de notre masque) dans un tableau
+
+def recupArrays(img1):
+    l,n=label(img1)
+    f=find_objects(l)    
+    arr=[]
+    count=0
+    for i in range(0,len(f)-1):
+        arr2=img1[f[i]]
+        arr.append(arr2)
+        count=count+1
+    return arr
+
+#fonction qui retourne à partir du tableau de la fonction précédente
+#les positions des groupes de pixels blancs dans l'image
+def calculPosRects(img1):
+    l,n=label(img1)
+    f=find_objects(l)    
+    arr=[]
+    count=0
+    for i in range(0,len(f)):
+        tupl=f[i]
+        arr.append(re.findall('\d+', str(tupl)))
+        
+    return arr
+
+#fonction qui calcule les hauteurs et largeurs de chaque groupes de pixels (couleurs>0
+def calculerHauteurLargeur(arr):
+    res=[]
+    for ob in arr:
+        arr2=[]
+        dy=abs(int(ob[1])-int(ob[0]))
+        dx=abs(int(ob[2])- int(ob[3]))
+        
+        arr2.append(dx);arr2.append(dy);
+        res.append(arr2)
+    return res
+
+#fonction qui retourne un tableau vrai ou faux pour chaque groupe de pixels blancs
+#avec une largeur>longueur (personne allongée)
+def verifAllonger(arr):
+    res=[]
+    for ob in arr:
+        arr2=[]
+        if abs(ob[0])>abs(ob[1]):
+            arr2.append(True)
+        else:
+            arr2.append(False)
+        res.append(arr2)
+    return res
+
+
+#TEST
+#res=calculPosRects(img1)
+#print(res)
+#res=calculerHauteurLargeur(res)
+#print(res)
+#res=verifAllonger(res)
+#print(res)
+##
+
+
+
