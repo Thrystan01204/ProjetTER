@@ -6,8 +6,30 @@ import cv2 as cv
 import argparse
 import numpy as np
 
+def addBlur():
+    global kernel_blur
+    kernel_blur = min(43, kernel_blur+2)
 
-global kernel_blur
+def lessBlur():
+    global kernel_blur
+    kernel_blur = max(1, kernel_blur-2)
+
+def addSurface():
+    global surface
+    surface+=1000
+
+def lessSurface():
+    global surface
+    surface = max(1000, surface-1000)
+
+def addSeuil():
+    global seuil
+    seuil=min(255, seuil+1)
+
+def lessSeuil():
+    global seuil
+    seuil=max(1, seuil-1)
+
 kernel_blur=5
 seuil=15
 surface=1000
@@ -35,25 +57,17 @@ args = parser.parse_args()
 root = tk.Tk()
 
 # Boutons
-def addBlur(kernel_blur):
-    kernel_blur = min(43, kernel_blur+2)
-addKernelBlurBT = tk.Button(root, text="Add blur", command=addBlur(kernel_blur))
+addKernelBlurBT = tk.Button(root, text="Add blur", command=addBlur)
 addKernelBlurBT.grid(column=0, row=0)
 
-labeTest = tk.Label(root, background="red", text=kernel_blur)
-labeTest.grid(column=1, row=0)
-
-def lessBlur():
-    max(1, kernel_blur-2)
 lessKernelBlurBT = tk.Button(root, text="Less blur", command=lessBlur)
+lessKernelBlurBT.grid(column=1, row=0)
 
-def addSurface():
-    surface+=1000
 addSurfaceBT = tk.Button(root, text="add Surface", command=addSurface)
+addSurfaceBT.grid(column=2, row=0)
 
-def lessSurface():
-    surface=max(1000, surface-1000)
-    return surface
+lessSurfaceBT = tk.Button(root, text="less Surface", command=lessSurface)
+lessSurfaceBT.grid(column=3, row=0)
 
 
 # Vidéo
@@ -117,25 +131,6 @@ while True:
     #affichage graphique de l'image de fond
     cv.putText(frame_contour, "[o|l]seuil: {:d}  [p|m]blur: {:d}  [i|k]surface: {:d}".format(seuil, kernel_blur, surface), (10, 30), cv.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 255, 255), 2)
     cv.rectangle(frame_contour, (zoneX, zoneY), (zoneX+zoneW, zoneY+zoneH), (255, 0, 0), 2)
-
-    #touche 'q' => fin de l'affichage
-    key=cv.waitKey(30)&0xFF
-    if key==ord('q'):
-        break
-    if key==ord('p'):
-        kernel_blur=min(43, kernel_blur+2)
-    if key==ord('m'):
-        kernel_blur=max(1, kernel_blur-2)
-    if key==ord('i'):
-        surface+=1000
-    if key==ord('k'):
-        surface=max(1000, surface-1000)
-    if key==ord('o'):
-        seuil=min(255, seuil+1)
-    if key==ord('l'):
-        seuil=max(1, seuil-1)
-    if key==ord('l'):
-        seuil=max(1, seuil-1)
 
     img1 = cv.cvtColor(frame_contour, cv.COLOR_BGR2RGB)
     img = ImageTk.PhotoImage(Image.fromarray(img1))
