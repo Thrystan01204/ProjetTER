@@ -1,0 +1,72 @@
+from numpy import dot
+from numpy import dot, sum, tile, linalg
+from numpy.linalg import inv 
+import numpy as np
+
+
+class Filtre_Kalman:
+    #initialisation
+    def __init__(self,cx,cy,w,h,dt):
+        self.X=np.array([cx cy w h])
+        self.P=np.eye(4)*10
+        self.Q=np.eye(4)*0.001           #matrice de bruit (incertitudes)
+        self.dt=dt                  #le temps entre chaque image
+        self.A=np.array([[1, 0, dt , 0], [0, 1, 0, dt], [0, 0, 1, 0], [0, 0, 0,\
+ 1]])   #matrice A de transition
+        self.B = np.eye(np.shape(X)[0])
+        self.U = zeros((np.shape(X)[0],1))
+        
+    def init_2(self,X, P, A, Q, B, U):
+        self.X=X;
+        self.P=P
+        self.A=A
+        self.Q=Q
+        self.B=B
+        self.U=U
+        
+    def kf_predict(self):
+         self.X = dot(self.A,self.X) + dot(self.B, self.U)
+         self.P = dot(self.A, dot(self.P, self.A.T)) + self.Q
+         return(self.X,self.P)
+            
+    def kf_update(X, P, Y, H, R):
+        IM = dot(H, X)
+        IS = R + dot(H, dot(P, H.T))
+        K = dot(P, dot(H.T, inv(IS)))
+        X = X + dot(K, (Y-IM))
+        P = P - dot(K, dot(IS, K.T))
+        LH = gauss_pdf(Y, IM, IS)
+        return (X,P,K,IM,IS,LH)
+
+    def gauss_pdf(X, M, S):
+        if M.shape()[1] == 1:
+            DX = X - tile(M, X.shape()[1])
+            E = 0.5 * sum(DX * (dot(inv(S), DX)), axis=0)
+            E = E + 0.5 * M.shape()[0] * log(2 * pi) + 0.5 * log(det(S))
+            P = exp(-E)
+        elif X.shape()[1] == 1:
+            DX = tile(X, M.shape()[1])- M
+            E = 0.5 * sum(DX * (dot(inv(S), DX)), axis=0)
+            E = E + 0.5 * M.shape()[0] * log(2 * pi) + 0.5 * log(det(S))
+            P = exp(-E)
+        else:
+            DX = X-M
+            E = 0.5 * dot(DX.T, dot(inv(S), DX))
+            E = E + 0.5 * M.shape()[0] * log(2 * pi) + 0.5 * log(det(S))
+            P = exp(-E)
+        return (P[0],E[0])
+
+
+# à chaque instant t, pour pouvoir prédire les futures positions de l'objet
+#il faut appliquer le code:
+
+#(X, P) = kf_predict(X, P, A, Q, B, U)
+#(X, P, K, IM, IS, LH) = kf_update(X, P, Y, H, R)
+
+#On récupère alors la matrice des valeurs moyennes des positions M et
+#de covariances S
+#LH les valeurs prédictives probables (probabilités)
+
+#aves les différentes mesures prises ensuite, on calcule la pente de la droite
+#pour déterminer s'il s'agit d'une chute ou pas
+
