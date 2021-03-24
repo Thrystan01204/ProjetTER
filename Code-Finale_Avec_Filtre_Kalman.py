@@ -7,7 +7,7 @@ import argparse
 import numpy as np
 import os
 from datetime import datetime
-import Filtre_Kalman
+import Filtre_KalmanOk
 
 video_width= 1280
 video_height= 720
@@ -133,14 +133,14 @@ def clicked(evt):
     global zoneW
     global zoneH
     if newZone:
-       zoneW = evt.x - zoneX
-       zoneH = evt.y - zoneY
-       loads[3]= zoneX
-       loads[4]= zoneY
-       loads[5]= zoneW
-       loads[6]= zoneH
-       save()
-       newZone = False
+        zoneW = evt.x - zoneX
+        zoneH = evt.y - zoneY
+        loads[3]= zoneX
+        loads[4]= zoneY
+        loads[5]= zoneW
+        loads[6]= zoneH
+        save()
+        newZone = False
     else:
         zoneX = evt.x
         zoneY = evt.y
@@ -278,22 +278,14 @@ while True:
         x, y, w, h=cv.boundingRect(c)
 
         if tours==1:
-            fk=Filtre_Kalman.Filtre_Kalman(x,y,w,h,DT,Y)
-          
-            
+            fk=Filtre_KalmanOk.Filtre_Kalman(x,y,w,h,DT,Y)
             (fk.X, fk.P) = fk.kf_predict()
         else:
-            
             Y=np.array([x,y,w,h])
-         
             fk.Y=Y
             (fk.X, fk.P, fk.K, fk.IM, fk.IS, fk.LH) = fk.kf_update(fk.X,fk.P, fk.Y, fk.H, fk.R)
             (fk.X, fk.P) = fk.kf_predict()
         print(fk.X,fk.P)
-
-
-
-
         
         if x>= zoneX and x <= zoneW and y>= zoneY and y <= zoneH :
             cv.rectangle(frame_contour, (x, y), (x+w, y+h), (0, 0, 255), 2)
