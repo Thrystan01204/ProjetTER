@@ -188,9 +188,9 @@ addSurfaceBT = tk.Button(menu, text = "add Surface", command = addSurface)
 
 lessSurfaceBT = tk.Button(menu, text = "less Surface", command = lessSurface)
 
-addSurfaceBT = tk.Button(menu, text = "reduire bruit", command = addSeuil)
+addSeuilBT = tk.Button(menu, text = "reduire bruit", command = addSeuil)
 
-lessSurfaceBT = tk.Button(menu, text = "ajouter bruit", command = lessSeuil)
+lessSeuilBT = tk.Button(menu, text = "ajouter bruit", command = lessSeuil)
 
 # Vidéo
 video = tk.Label(fenetre, bg = "black")
@@ -222,8 +222,8 @@ addKernelBlurBT.grid(row = 0)
 lessKernelBlurBT.grid(row = 1)
 addSurfaceBT.grid(row = 2)
 lessSurfaceBT.grid(row = 3)
-addSurfaceBT.grid(row = 4)
-lessSurfaceBT.grid(row = 5)
+addSeuilBT.grid(row = 4)
+lessSeuilBT.grid(row = 5)
 
 menuSource.grid(row = 1, column = 0)
 
