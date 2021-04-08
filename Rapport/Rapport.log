@@ -1,21 +1,22 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.2.1)  31 MAR 2021 12:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.2.1)  8 APR 2021 17:10
 entering extended mode
 **d:/Universite/ProjetsGit/ProjetTER/ProjetTER/Rapport/Rapport.tex
 (d:/Universite/ProjetsGit/ProjetTER/ProjetTER/Rapport/Rapport.tex
 LaTeX2e <2020-10-01> patch level 2
-L3 programming layer <2020-12-07> xparse <2020-03-03> (D:\Programmes\MiKTeX\tex/latex/base\article.cls
-Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+L3 programming layer <2020-12-07> xparse <2020-03-03> (D:\Programmes\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
 (D:\Programmes\MiKTeX\tex/latex/base\size10.clo
 File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count177
-\c@section=\count178
-\c@subsection=\count179
-\c@subsubsection=\count180
-\c@paragraph=\count181
-\c@subparagraph=\count182
-\c@figure=\count183
-\c@table=\count184
+\c@chapter=\count178
+\c@section=\count179
+\c@subsection=\count180
+\c@subsubsection=\count181
+\c@paragraph=\count182
+\c@subparagraph=\count183
+\c@figure=\count184
+\c@table=\count185
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -33,13 +34,13 @@ Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 Package: babel 2020/10/27 3.51 The Babel package
  (D:\Programmes\MiKTeX\tex/generic/babel\babel.def
 File: babel.def 2020/10/27 3.51 Babel common definitions
-\babel@savecnt=\count185
+\babel@savecnt=\count186
 \U@D=\dimen139
 \l@babelnohyphens=\language79
  (D:\Programmes\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 )
-\bbl@dirlevel=\count186
+\bbl@dirlevel=\count187
 
 *************************************
 * Local config file bblopts.cfg used
@@ -52,19 +53,19 @@ Package babel Info: \l@acadian = using hyphenrules for french
 (babel)             (\language22) on input line 91.
 Package babel Info: \l@canadien = using hyphenrules for french
 (babel)             (\language22) on input line 92.
-\FB@nonchar=\count187
+\FB@nonchar=\count188
 Package babel Info: Making : an active character on input line 430.
 Package babel Info: Making ; an active character on input line 431.
 Package babel Info: Making ! an active character on input line 432.
 Package babel Info: Making ? an active character on input line 433.
-\FBguill@level=\count188
+\FBguill@level=\count189
 \FBold@everypar=\toks17
 \FB@Mht=\dimen140
-\mc@charclass=\count189
-\mc@charfam=\count190
-\mc@charslot=\count191
-\std@mcc=\count192
-\dec@mcc=\count193
+\mc@charclass=\count190
+\mc@charfam=\count191
+\mc@charslot=\count192
+\std@mcc=\count193
+\dec@mcc=\count194
 \listindentFB=\dimen141
 \descindentFB=\dimen142
 \labelindentFB=\dimen143
@@ -79,14 +80,14 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
  (D:\Programmes\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count194
+\etb@tempcnta=\count195
 )
-\csq@reset=\count195
-\csq@gtype=\count196
-\csq@glevel=\count197
-\csq@qlevel=\count198
-\csq@maxlvl=\count199
-\csq@tshold=\count266
+\csq@reset=\count196
+\csq@gtype=\count197
+\csq@glevel=\count198
+\csq@qlevel=\count199
+\csq@maxlvl=\count266
+\csq@tshold=\count267
 \csq@ltx@everypar=\toks19
  (D:\Programmes\MiKTeX\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
@@ -116,7 +117,7 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 \Gin@req@width=\dimen149
 ) (D:\Programmes\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count267
+\c@float@type=\count268
 \float@exts=\toks20
 \float@box=\box47
 \@float@everytoks=\toks21
@@ -126,7 +127,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
  (D:\Programmes\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count268
+\l__kernel_color_stack_int=\count269
 \l__pdf_internal_box=\box49
 ) (d:/Universite\ProjetsGit\ProjetTER\ProjetTER\Rapport\Rapport.aux)
 \openout1 = `Rapport.aux'.
@@ -150,16 +151,16 @@ LaTeX Info: Redefining \dots on input line 13.
 LaTeX Info: Redefining \up on input line 13.
  (D:\Programmes\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count269
+\scratchcounter=\count270
 \scratchdimen=\dimen150
 \scratchbox=\box50
-\nofMPsegments=\count270
-\nofMParguments=\count271
+\nofMPsegments=\count271
+\nofMParguments=\count272
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count272
+\MPscratchCnt=\count273
 \MPscratchDim=\dimen151
-\MPnumerator=\count273
-\makeMPintoPDFobject=\count274
+\MPnumerator=\count274
+\makeMPintoPDFobject=\count275
 \everyMPtoPDFconversion=\toks23
 ) (D:\Programmes\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -180,19 +181,19 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 14.
 [1
 
-{C:/Users/trist/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (d:/Universite\ProjetsGit\ProjetTER\ProjetTER\Rapport\Rapport.aux) ) 
+{C:/Users/trist/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [1] (d:/Universite\ProjetsGit\ProjetTER\ProjetTER\Rapport\Rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 3878 strings out of 479697
- 55920 string characters out of 2878462
- 356419 words of memory out of 3000000
- 20958 multiletter control sequences out of 15000+200000
- 409375 words of font info for 42 fonts, out of 3000000 for 9000
+ 3903 strings out of 479697
+ 56201 string characters out of 2878462
+ 356950 words of memory out of 3000000
+ 20979 multiletter control sequences out of 15000+200000
+ 410918 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,6n,72p,273b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk>
-Output written on d:/Universite\ProjetsGit\ProjetTER\ProjetTER\Rapport\Rapport.pdf (1 page, 24908 bytes).
+ <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk>
+Output written on d:/Universite\ProjetsGit\ProjetTER\ProjetTER\Rapport\Rapport.pdf (2 pages, 31370 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
