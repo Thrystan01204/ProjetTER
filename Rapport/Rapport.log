@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.9)  10 APR 2021 15:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.9)  10 APR 2021 16:10
 entering extended mode
 **c:/Users/Corentin/OneDrive/L3/Semestre2/EEEA/ProjetTER/DossierPartageGit/ProjetTER/Rapport/Rapport.tex
 (c:/Users/Corentin/OneDrive/L3/Semestre2/EEEA/ProjetTER/DossierPartageGit/ProjetTER/Rapport/Rapport.tex
@@ -189,15 +189,15 @@ Chapitre 1.
 Here is how much of TeX's memory you used:
  3910 strings out of 479697
  58449 string characters out of 2865708
- 356917 words of memory out of 3000000
+ 358917 words of memory out of 3000000
  20983 multiletter control sequences out of 15000+200000
  413242 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,6n,72p,311b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 66i,6n,72p,628b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk>
-Output written on c:/Users\Corentin\OneDrive\L3\Semestre2\EEEA\ProjetTER\DossierPartageGit\ProjetTER\Rapport\Rapport.pdf (2 pages, 46282 bytes).
+Output written on c:/Users\Corentin\OneDrive\L3\Semestre2\EEEA\ProjetTER\DossierPartageGit\ProjetTER\Rapport\Rapport.pdf (2 pages, 53706 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
+ 171 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
