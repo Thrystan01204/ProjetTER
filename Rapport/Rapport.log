@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.2.1)  8 APR 2021 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.9)  10 APR 2021 15:34
 entering extended mode
-**d:/Universite/ProjetsGit/ProjetTER/ProjetTER/Rapport/Rapport.tex
-(d:/Universite/ProjetsGit/ProjetTER/ProjetTER/Rapport/Rapport.tex
+**c:/Users/Corentin/OneDrive/L3/Semestre2/EEEA/ProjetTER/DossierPartageGit/ProjetTER/Rapport/Rapport.tex
+(c:/Users/Corentin/OneDrive/L3/Semestre2/EEEA/ProjetTER/DossierPartageGit/ProjetTER/Rapport/Rapport.tex
 LaTeX2e <2020-10-01> patch level 2
-L3 programming layer <2020-12-07> xparse <2020-03-03> (D:\Programmes\MiKTeX\tex/latex/base\report.cls
+L3 programming layer <2020-12-03> xparse <2020-03-03> (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2020/04/10 v1.4m Standard LaTeX document class
-(D:\Programmes\MiKTeX\tex/latex/base\size10.clo
+(C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
 File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
 \c@part=\count177
@@ -20,24 +20,24 @@ File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (D:\Programmes\MiKTeX\tex/latex/a4wide\a4wide.sty
+) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/a4wide\a4wide.sty
 Package: a4wide 1994/08/30
- (D:\Programmes\MiKTeX\tex/latex/ntgclass\a4.sty
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/ntgclass\a4.sty
 Package: a4 2020/02/18 v1.2g A4 based page layout
-)) (D:\Programmes\MiKTeX\tex/latex/base\inputenc.sty
+)) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
-) (D:\Programmes\MiKTeX\tex/latex/base\fontenc.sty
+) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
-) (D:\Programmes\MiKTeX\tex/generic/babel\babel.sty
+) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2020/10/27 3.51 The Babel package
- (D:\Programmes\MiKTeX\tex/generic/babel\babel.def
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
 File: babel.def 2020/10/27 3.51 Babel common definitions
 \babel@savecnt=\count186
 \U@D=\dimen139
 \l@babelnohyphens=\language79
- (D:\Programmes\MiKTeX\tex/generic/babel\txtbabel.def)
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 )
 \bbl@dirlevel=\count187
@@ -45,9 +45,9 @@ File: babel.def 2020/10/27 3.51 Babel common definitions
 *************************************
 * Local config file bblopts.cfg used
 *
-(D:\Programmes\MiKTeX\tex/latex/arabi\bblopts.cfg
+(C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (D:\Programmes\MiKTeX\tex/generic/babel-french\french.ldf
+) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/generic/babel-french\french.ldf
 Language: french 2020/10/10 v3.5l French support from the babel system
 Package babel Info: \l@acadian = using hyphenrules for french
 (babel)             (\language22) on input line 91.
@@ -73,12 +73,12 @@ Package babel Info: Making ? an active character on input line 433.
 \leftmarginFB=\dimen145
 \parindentFFN=\dimen146
 \FBfnindent=\dimen147
-)) (D:\Programmes\MiKTeX\tex/latex/carlisle\scalefnt.sty) (D:\Programmes\MiKTeX\tex/latex/graphics\keyval.sty
+)) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
-) (D:\Programmes\MiKTeX\tex/latex/csquotes\csquotes.sty
+) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
 Package: csquotes 2021-02-22 v5.2l context-sensitive quotations (JAW)
- (D:\Programmes\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count195
 )
@@ -89,33 +89,33 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \csq@maxlvl=\count266
 \csq@tshold=\count267
 \csq@ltx@everypar=\toks19
- (D:\Programmes\MiKTeX\tex/latex/csquotes\csquotes.def
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2021-02-22 v5.2l csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
- (D:\Programmes\MiKTeX\tex/latex/csquotes\csquotes.cfg
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.cfg
 File: csquotes.cfg 
 )
 Package csquotes Info: Option 'babel' depreciated.
 (csquotes)             Using 'autostyle'.
 Package csquotes Info: Enabling multilingual quotes.
-) (D:\Programmes\MiKTeX\tex/latex/graphics\graphicx.sty
+) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
- (D:\Programmes\MiKTeX\tex/latex/graphics\graphics.sty
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
- (D:\Programmes\MiKTeX\tex/latex/graphics\trig.sty
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (D:\Programmes\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
- (D:\Programmes\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen148
 \Gin@req@width=\dimen149
-) (D:\Programmes\MiKTeX\tex/latex/float\float.sty
+) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count268
 \float@exts=\toks20
@@ -125,11 +125,11 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
- (D:\Programmes\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count269
 \l__pdf_internal_box=\box49
-) (d:/Universite\ProjetsGit\ProjetTER\ProjetTER\Rapport\Rapport.aux)
+) (c:/Users\Corentin\OneDrive\L3\Semestre2\EEEA\ProjetTER\DossierPartageGit\ProjetTER\Rapport\Rapport.aux)
 \openout1 = `Rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -149,7 +149,7 @@ LaTeX Font Info:    ... okay on input line 13.
 LaTeX Info: Redefining \degres on input line 13.
 LaTeX Info: Redefining \dots on input line 13.
 LaTeX Info: Redefining \up on input line 13.
- (D:\Programmes\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+ (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count270
 \scratchdimen=\dimen150
@@ -162,7 +162,7 @@ LaTeX Info: Redefining \up on input line 13.
 \MPnumerator=\count274
 \makeMPintoPDFobject=\count275
 \everyMPtoPDFconversion=\toks23
-) (D:\Programmes\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
 )
@@ -181,19 +181,19 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 14.
 [1
 
-{C:/Users/trist/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [1] (d:/Universite\ProjetsGit\ProjetTER\ProjetTER\Rapport\Rapport.aux) ) 
+{C:/Users/Corentin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [1] (c:/Users\Corentin\OneDrive\L3\Semestre2\EEEA\ProjetTER\DossierPartageGit\ProjetTER\Rapport\Rapport.aux) ) 
 Here is how much of TeX's memory you used:
  3903 strings out of 479697
- 56201 string characters out of 2878462
- 356950 words of memory out of 3000000
+ 58363 string characters out of 2865708
+ 356917 words of memory out of 3000000
  20979 multiletter control sequences out of 15000+200000
  410918 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,6n,72p,273b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\trist\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk>
-Output written on d:/Universite\ProjetsGit\ProjetTER\ProjetTER\Rapport\Rapport.pdf (2 pages, 31370 bytes).
+ 66i,6n,72p,311b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk>
+Output written on c:/Users\Corentin\OneDrive\L3\Semestre2\EEEA\ProjetTER\DossierPartageGit\ProjetTER\Rapport\Rapport.pdf (2 pages, 33228 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
