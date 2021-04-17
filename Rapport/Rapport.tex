@@ -47,7 +47,11 @@
             A chaque appel de la fonction capture.read(), la librairie capture l'image du flux vidéo en entré, cette image va ensuite être utilisé pour faire les différents traitements et notamment la détection de chute.
 
         \section{Détection de chute}
-        \section{Reconnaisance faciale}
+            La détection se décompose en deux parties, la première consiste à extraire le sujet de la scène et la deuxième étudier son déplacement afin de savoir si oui ou non il y a bien eu une chute.
+            \subsection{Extraction du sujet}
+            Pour extraire le sujet deux méthodes ont été etudiés, la première methode consiste à utiliser une technique de classification. c'est une technique d'apprentissage supervisé. Il faut d'abord créer une base de données afin d'entrainer le modèle pour pouvoir reconnaitre le pattern desiré. Cette méthode est coûteuse en ressource, mais peut être très efficace si la base de donnés est grande.  
+            \subsection{Critère de détection de chute}
+        \section{Reconnaissance faciale}
         \section{Interface Graphique}
         \section{Commande du matériel}
 
