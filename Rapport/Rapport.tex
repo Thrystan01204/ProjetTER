@@ -31,6 +31,7 @@
     Pour la détection de chute, lorsqu'une chute sera détecté une alarme sera activé afin d'alerter le personnel soignant. Depuis une interface graphique l'utilisateur pourra visualiser en temps réel le flux vidéo, choisir la caméra, mettre en pause le flux vidéo et désactiver l'alarme. Concernant la reconnaissance faciale, l'utilisateur connaitra le nom et le prénom de la personne si il est enregistré dans la base de données de l'établissement, ce qui permettra de détecter les éventuels intrus.
         \section{Cahier des charges}
         \section{Support Logiciels/ Langage de Programmation/ Librairie}
+        Plusieurs langages de programmation ont été discuté avant la réalisation du projet, dans un premier temps, nous avons opté pour le langage JAVA, notamment pour la programmation orienté objet qui facilite le travail en équipe lors du dévellopement. Finalement nous nous sommes decidé pour le langage Python, car il bénéfie d'une grande communauté, possède de nombreuses librairies, fonctionnalités que nous avions besoin. D'autre part c'est un langage que tous les membres de l'équipe savaient déjà programmer en Python.
 
     \chapter{Modélisation}
         \section{Machine virtuelle OS Linux(Debian)}
@@ -41,6 +42,10 @@
     
     \chapter{Réalisation Software-Hardware}
         \section{Acquisition vidéo}
+            Grâce à la librairie openCV, nous pouvons faire l'acquisition de tout type de caméra, en effet il suffit que la caméra soit branché à l'ordinateur pour qu'on l'utiliser. La lbrairie prend aussi en charge les caméras IP et le fichier vidéo.
+            \\
+            A chaque appel de la fonction capture.read(), la librairie capture l'image du flux vidéo en entré, cette image va ensuite être utilisé pour faire les différents traitements et notamment la détection de chute.
+
         \section{Détection de chute}
         \section{Reconnaisance faciale}
         \section{Interface Graphique}
