@@ -30,15 +30,63 @@
     Le but de ce projet est de réaliser une surveillance vidéo avec deux composantes, la détection de chute et la reconnaissance faciale.
     Pour la détection de chute, lorsqu'une chute sera détecté une alarme sera activé afin d'alerter le personnel soignant. Depuis une interface graphique l'utilisateur pourra visualiser en temps réel le flux vidéo, choisir la caméra, mettre en pause le flux vidéo et désactiver l'alarme. Concernant la reconnaissance faciale, l'utilisateur connaitra le nom et le prénom de la personne si il est enregistré dans la base de données de l'établissement, ce qui permettra de détecter les éventuels intrus.
         \section{Cahier des charges}
+        
         \section{Support Logiciels/ Langage de Programmation/ Librairie}
+        
         Plusieurs langages de programmation ont été discuté avant la réalisation du projet, dans un premier temps, nous avons opté pour le langage JAVA, notamment pour la programmation orienté objet qui facilite le travail en équipe lors du dévellopement. Finalement nous nous sommes decidé pour le langage Python, car il bénéfie d'une grande communauté, possède de nombreuses librairies, fonctionnalités que nous avions besoin. D'autre part c'est un langage que tous les membres de l'équipe savaient déjà programmer en Python.
+        On utilise Virtual Box comme logiciel de simulation de différents systèmes d'exploitations.
+    A partir des ressources d'une machine h\^{o}te ayant des performances correctes, dans notre 
+    cas un Window 10, nous créons deux machines virtuelles de types Linux (Debian et Raspberry OS).
+    La démarche vise avant tout à régler les configurations, installer logiciels et libraires utiles et 
+    tester le code. Nous en parlerons dans la prochaine section.
+
+    Nous établissons une connexion SSH entre le Raspberry Pi (serveur) et notre PC Window (client) dû au fait
+    que nous avions pas de moniteur de contr\^{o}le. Le protoc\^{o}le SSH est un moyen 
+    de communication sécurisé et chiffré sur un réseau. (Une équivalence plus simple
+    existe, le protoc\^{o}le Telnet, mais il transfère les données de façon trop visible
+    sur le réseau et est donc sensible au piratage). (Bibliothèque \ref{bib:Connexion SSH},
+    p\pageref{bib:Connexion SSH}) 
+
+    Nous réalisons le schéma électrique de la section \ref{sec:schema montage} avec le logiciel KiCad,
+    qui est un logiciel multi-plaforme pouvant dessiner un schéma électronique, créer une empreinte
+    PCB pour la réalisation de circuits imprimés ou faire une modélisation 3D du circuit.
+    
+    
 
     \chapter{Modélisation}
         \section{Machine virtuelle OS Linux(Debian)}
         \section{Machine virtuelle OS Raspberry Pi 2}
-        \section{Schéma de montage Hardware et description des composants}
+        
+        
+        \section{Schéma de montage Hardware et description des composants}  \label{sec:schema montage}
 
-    Sur la partie matériel nous avons choisi d'utiliser un Rasberry Pi, du fait de son aspect compact et de sa grande capacité de calcul. Concernant la partie logiciel, nous nous sommes tourné vers le langage de programmation Python car c'est un langage polyvalent avec une grande communauté et possède plusieurs librairies utiles à notre projet.
+    Sur la partie matériel nous avons choisi d'utiliser un Rasberry Pi, du fait de son aspect compact et 
+    de sa grande capacité de calcul. Le modèle utilisé est le Raspberry 3b+, on énumère ici quelques
+    caractéristiques:
+        \begin{itemize}
+            \item Mémoire vive :1 GB, 1.2GHz Quad-Core ARM Cortex-A53
+            \item Nombre de coeur : 4
+            \item Alimentation : 5V, 2A
+            \item Ports USB : 4
+            \item Module Bluetooth 4.1 et Wifi
+            \item Interface Carte Graphique : PCI-E
+            \item Processeur : 4 x ARM(v7) 7100
+            \item GPU : Dual Core VideoCore IV \newline
+        \end{itemize}
+    On liste ici les ports GPIO de raspberry utile pour la connexion avec le module RFID:\newline
+        \begin{tabular}{||p{2cm}||*{8}{c|}|}
+            \hline
+            \small{RFID} & \small{Vcc +3.3V} & \small{GND} & \small{MISO} 
+            & \small{MOSI} & \small{SCK} & \small{SDA} & \small{RST} \\
+            \hline
+            \bfseries \small{Raspberry} & \small{01-3.3V} & \small{06-Ground} 
+            & \small{21-GPIO09} & \small{19-GPIO10} & \small{23-GPIO11} 
+            & \small{24-GPIO08} & \small{22-GPIO25} \\
+            \hline
+            \end{tabular}\newline
+            
+            
+            
     
     \chapter{Réalisation Software-Hardware}
         \section{Acquisition vidéo}
@@ -80,6 +128,13 @@
             \emph{Utiliser un lecteur RFID avec Raspberry}. \newline
             Consulté le 03/04/2021
             \begin{verbatim}url = https://raspberry-pi.fr/rfid-raspberry-pi/  
+            \end{verbatim}
+            
+        \bibitem{}\label{bib:Connexion SSH}
+            Raspberry Lab fr,
+            \emph{Etablir une connexion SSH}. \newline
+            Consulté le 17/03/2021
+            \begin{verbatim}url = https://raspberry-lab.fr/Debuter-sur-Raspberry-Francais/Connexion-Bureau-a-distance-Raspberry-Francais/#:~:text=Configurations%20sur%20%20Windows%20Text=Entrez%20%20simplement%20%20l'adresse%20IP,pi%20%20et%20%20raspberry)%20%20et%20%20validez.  
             \end{verbatim}
 
     \end{thebibliography}
