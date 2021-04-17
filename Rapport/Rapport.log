@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.12)  17 APR 2021 22:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.12)  17 APR 2021 22:59
 entering extended mode
 **c:/Users/Corentin/OneDrive/Documents/RapportGit/ProjetTER/Rapport/Rapport.tex
 (c:/Users/Corentin/OneDrive/Documents/RapportGit/ProjetTER/Rapport/Rapport.tex
@@ -133,6 +133,9 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `' multiply defined.
 
+
+LaTeX Warning: Label `' multiply defined.
+
 )
 \openout1 = `Rapport.aux'.
 
@@ -185,56 +188,87 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 14.
 [1
 
-{C:/Users/Corentin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-Chapitre 1.
-[1
+{C:/Users/Corentin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] (c:/Users\Corentin\OneDrive\Documents\RapportGit\ProjetTER\Rapport\Rapport.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 5.
+)
+\tf@toc=\write3
+\openout3 = `Rapport.toc'.
+
+ [1
 
 ]
-Chapitre 2.
+Chapitre 1.
 [2
 
 ]
-Chapitre 3.
+Chapitre 2.
 [3
 
 ]
-Chapitre 4.
+Chapitre 3.
 [4
 
 ]
-Chapitre 5.
+Chapitre 4.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+
+Overfull \hbox (47.26181pt too wide) in paragraph at lines 78--89
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--89
+
+ []
+
 [5
 
 ]
-Chapitre 6.
+Chapitre 5.
 [6
 
+] [7]
+Chapitre 6.
+[8
+
 ]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 79.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 137.
  (C:\Users\Corentin\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [7
+)
+Overfull \hbox (903.1463pt too wide) in paragraph at lines 152--152
+ []\T1/cmtt/m/n/10 url = https://raspberry-lab.fr/Debuter-sur-Raspberry-Francais/Connexion-Bureau-a-distance-Raspberry-Francais/#:~:text=Configurations%20sur%20%20Windows%20Text=Entrez%20%20simplement%20%20l'adresse%20IP,pi%20%20et%20%20raspberry)%20%20et%20%20validez. 
+ []
+
+[9
 
 
-] [8
+] [10
 
-] [9] (c:/Users\Corentin\OneDrive\Documents\RapportGit\ProjetTER\Rapport\Rapport.aux)
+] [11] (c:/Users\Corentin\OneDrive\Documents\RapportGit\ProjetTER\Rapport\Rapport.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3939 strings out of 479799
- 58937 string characters out of 2868297
- 358334 words of memory out of 3000000
- 20903 multiletter control sequences out of 15000+200000
- 547447 words of font info for 53 fonts, out of 3000000 for 9000
+ 3954 strings out of 479799
+ 59242 string characters out of 2868297
+ 364352 words of memory out of 3000000
+ 20912 multiletter control sequences out of 15000+200000
+ 549764 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,6n,72p,632b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk>
-Output written on c:/Users\Corentin\OneDrive\Documents\RapportGit\ProjetTER\Rapport\Rapport.pdf (10 pages, 128497 bytes).
+ 66i,8n,72p,632b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx0900.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2074.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Corentin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk>
+Output written on c:/Users\Corentin\OneDrive\Documents\RapportGit\ProjetTER\Rapport\Rapport.pdf (12 pages, 175008 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
+ 532 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
