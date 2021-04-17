@@ -97,6 +97,14 @@
         \section{Détection de chute}
         \section{Reconnaisance faciale}
         \section{Interface Graphique}
+            Nous avons cherché à créer une interface graphique pour notre porjet qui permette de modifier certains paramètres, de changer la caméra.\\
+            Pour réaliser cette interface nous avons utilisé la librairie intégrée de Python, Tkinter. Cette librairie permet de créer des interfaces graphiques assez simplement. Nous pouvons y ajouter des boutons des canvas (rectangle dans lequel nous pouvons placer du contenu).\\
+            La première chose que nous avons cherché à réaliser est l'intégration de l'acquisition vidéo à notre interface. 
+            \subsection{Intégration de l'acquisition vidéo}
+            Pour intégrer l'acquisition vidéo à notre interface, nous devions faire en sorte qu'elle puisse être raffraichie pour modifier l'image affichée. La première idée que nous avons eu consistait à créer deux objets différents, un objet interface qui contiendrait les éléments de l'interface et permettrait d'en créer une. Puis un second objet acquisition, qui devait être l'acquisition vidéo. Nous n'aurions eu alors qu'à raffraichir l'image affichée.\\
+            Nous n'avons pas réussi à mettre cette solution en œuvre car l'acquisition vidéo ne possède pas de constructeur qui permette de créer un objet.\\
+            La seconde option que nous avons exploré consistait à réaliser un unique code qui contiendrait et l'acquisition vidéo et l'interface.\\
+            C'est cettte dernière option qui a été retenue. Elle était plus simple de mise en œuvre. 
         \section{Commande du matériel}
 
     \chapter{Bilan du projet}
