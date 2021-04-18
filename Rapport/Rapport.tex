@@ -12,10 +12,8 @@
 
 \begin{document}
     \maketitle
-    
-    \tableofcontents
-    
-    \chapter{Avant propos}
+      
+    \chapter*{Avant propos}
 
     L'objectif de cette unité d'enseignement est de nous préparé aux projets d'études de Master.
     Non content de consolider notre bagage scientifique, nous collaborons parmi un groupe de projet
@@ -26,7 +24,13 @@
     ouvrages et documents en ligne, sur lequel nous avons pu tirer informations, codes et librairies.
     Nous remerçions donc ces écrivains parfois anonymes.
     
-    \chapter{Introduction}
+    \chapter*{Introduction}
+    
+    
+    \tableofcontents
+    
+    \part{Corps du rapport}
+    
     \chapter{Description}
         \section{Définition du projet}
     Le but de ce projet est de réaliser une surveillance vidéo avec deux composantes, la détection de chute et la reconnaissance faciale.
@@ -46,19 +50,78 @@
     que nous avions pas de moniteur de contr\^{o}le. Le protoc\^{o}le SSH est un moyen 
     de communication sécurisé et chiffré sur un réseau. (Une équivalence plus simple
     existe, le protoc\^{o}le Telnet, mais il transfère les données de façon trop visible
-    sur le réseau et est donc sensible au piratage). (Bibliothèque \ref{bib:Connexion SSH},
-    p\pageref{bib:Connexion SSH}) 
+    sur le réseau et est donc sensible au piratage). 
+
+    On réalise la connexion en installant TighVNC sur Raspberry. (Tutoriel : Bibliothèque \ref{bib:Connexion SSH},
+    p\pageref{bib:Connexion SSH}). Sur Window est déjà présent l'outil 'Connexion à distance'.
+    A partir d'un m\^{e}me réseau Wifi,  nous nous servons de la reconnaissance IP pour l'asservissement.
 
     Nous réalisons le schéma électrique de la section \ref{sec:schema montage} avec le logiciel KiCad,
-    qui est un logiciel multi-plaforme pouvant dessiner un schéma électronique, créer une empreinte
+    qui est un logiciel multi-plaformes pouvant dessiner un schéma électronique, créer une empreinte
     PCB pour la réalisation de circuits imprimés ou faire une modélisation 3D du circuit.
     
     
 
     \chapter{Modélisation}
+    
         \section{Machine virtuelle OS Linux(Debian)}
+        
+        La nécessité de simuler un environnment Linux fut déclenché à la compilation d'une
+    certaine librairie, mfrc522 (télécharger sur Pypi.org), qui avait des dépendances Linux.
+    M\^{e}me si la bibliothèque utilisée changea par la suite, le besoin de tester notre code
+    étape par étape pour valider notre code resta instact.
+    De ce fait, via VirtualBox de Oracle, nous créons un machine virtuelle de stockage allouée 
+    dynamiquement à partir d'un fichier .iso du système. (2048 Mo de mémoire vive et 15 Go de stockage)
+
+    Après démarrage de la machine, nous installons Python 3.9 (m\^{e}me si une version 2.7 est
+    déjà intégré) et ses dépendances. Nous importons également 'pip3', un gestionnaire de paquets
+    très utiles pour les librairies Python. Nous parvenons aussi à installer VS code via un 
+    logiciel nommé SNAP.
+
+    L'ensemble des commandes utilisées sur cette machine est donnée en annexe. (Annexe\ref{sec:cde machine virtuelle},
+    page\pageref{sec:cde machine virtuelle})
+
+    La machine étant désormais opérationnelle, nous compilons l'ébauche du code que nous avions.
+    L'intégration du flux vidéo, l'interface graphique s'est bien déroulé, mais surtout
+    la librairie qui nous posait problème a pu s'intégrer. Nous avons levé une difficulté.
+
+    Néanmoins, un nouveau problème est apparu à cette phase : la lecture des ports GPIO étant
+    propre au Raspberry, il nous fallait une machine de virtualisation plus adapté.
+        
         \section{Machine virtuelle OS Raspberry Pi 2}
         
+        Afin de virtualiser un système d'exploitation Raspberry Pi, nous étions d'abord parti sur
+    la piste de Qemu : un émulateur pour processeurs. Nous l'installons sur notre système
+    debian présenté dans la section d'avant.
+    Les quelques lignes de commandes sont notifiées en annexe. (Annexe\ref{sec:qmu},
+    page\pageref{sec:qmu})
+
+    Nous configurons le processeur sur Cortex-A7 (Raspberry 2), étant donnée que Cortex-A53
+    (Rasperry 3) n'est pas supporté. Mais nous recontrons une erreur de la procédure. De plus,
+    selon certains développeurs, ce logiciel est particulièrement lent et présente plusieurs bugs.
+
+    Notre enseignant tuteur nous a donc conseillé de créer une machine virtuelle du système
+    Raspberry Pi directement sur VirtualBox, le système d'exploitation .iso étant directement
+    disponible depuis leur site officiel (https://www.raspberrypi.org/). Malheuresement, seul 
+    l'OS du Raspberry 2 est actuellement disponible, l'OS du 3 en fichier iso est en développement. 
+    On suit un tutoriel donnée en bibliographie.  (Tutoriel : Bibliothèque \ref{bib:raspebrry_os},
+    p\pageref{bib:raspebrry_os}) Attention cependant, une des étapes donnée imprime l'OS sur une 
+    clé USB externe pour formater un appareil. Cette étape n'est pas pertinante pour nous.
+
+    On affecte 4Go de mémoire vive et 15Go de stockage allouée dynamiquement. On réalise un
+    diagnostic de rapidité à l'aide de la commande 'ping', dû à certains ralentissement rencontrés. 
+    \begin{verbatim}$ ping -a 192.168.56.1 \end{verbatim}
+    L'adresse IP présent ici étant l'adresse de la machine. On envoie des messages de 64 bytes. 
+    Paquets transmis/reçu 60, moyenne : 0.713 ms. Temps total: 312 ms. Nous avons un bon débit,
+    la lenteur venait donc visiblement de la machine h\^{o}te.
+
+    A l'instar de la machine Debian, on installe Python3.9 et pip sur la machine de la framboise.
+    VsCode n'étant pas compatible, nous privilègions le logiciel 'Mu' pour la lecture et la 
+    compilation du code. Nous testons donc à nouveau, les élèments vidéo et interface s'excécutent,
+    et nous pouvons désormais intégrer les ports GPIO via les bibliothèques rpi.gpio
+    et pyrc522 0.1.2. (disponible sur pypi.org).
+    Après le teste de quelques commandes de type serial (input/output) et la compilation de libraires,
+    nous sommes passer enfin à la programmation sous notre Raspberry Pi 3b+ physique.
         
         \section{Schéma de montage Hardware et description des composants}  \label{sec:schema montage}
 
@@ -150,6 +213,13 @@
             Consulté le 17/03/2021
             \begin{verbatim}url = https://raspberry-lab.fr/Debuter-sur-Raspberry-Francais/Connexion-Bureau-a-distance-Raspberry-Francais/#:~:text=Configurations%20sur%20%20Windows%20Text=Entrez%20%20simplement%20%20l'adresse%20IP,pi%20%20et%20%20raspberry)%20%20et%20%20validez.  
             \end{verbatim}
+            
+         \bibitem{}\label{bib:raspebrry_os}
+            Raspberrypi.org,
+            \emph{Installer OS Raspberry Desktop : machine virtuelle}. \newline
+            Consulté le 10/03/2021
+            \begin{verbatim}url = https://projects.raspberrypi.org/en/projects/install-raspberry-pi-desktop  
+            \end{verbatim}
 
     \end{thebibliography}
 
@@ -159,8 +229,82 @@
 
 
     \appendix{}
-    \part*{Annexes}
+    
+    \part{Annexes}
+    
         \section{Code principal du système}
         \section{Code librairie : RFID.py}
+        
+        \section{Commande Machine vituelle Debian} \label{sec:cde machine virtuelle}
+
+    \begin{verbatim}
+Installation de Debian 64bit (Linux) sur un système hôte Window 10.
+    Id : Mikael
+    Mdp : cf344d
+    Root Mdp : qwerty (correspondance sur clavier azerty)
+
+Mettre à jour le docker (concevoir, tester et déployer des applications dans des conteneurs de logiciel):
+    $ sudo apt update
+    $ sudo apt install software-properties-common apt-transport-https curl
+
+Installer Python 3.9 (source : https://linuxize.com/post/how-to-install-python-3-9-on-debian-10/ )
+    $ sudo apt update
+    $ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev
+    $ wget https://www.python.org/ftp/python/3.9.1/Python-3.9.1.tgz
+    $ tar -xf Python-3.9.1.tgz
+    $ cd Python-3.9.1
+    $ ./configure --enable-optimizations
+    $ make -j 2
+    $ sudo make altinstall
+    Vérifier après installation
+    $ python3.9 --version
+
+Installer pip pour Python:
+    $ sudo apt install python3-pip
+    $ pip3 --version
+
+Installer SNAP (équivalence de Windows Store pour Linux)
+    $ sudo apt install snapd
+
+Installer VSCode (Linux)
+    $ sudo snap install --classic code
+    $ sudo apt update
+    Redémarrer le système
+
+Installer les bibliothèques nécessaires
+    $ pip3 install RPi.GPIO==0.7.0
+    $ pip3 install opencv-contrib-python
+    
+    \end{verbatim}
+
+    \section{Commande Machine vituelle Debian} \label{sec:qmu}
+
+    \begin{verbatim}
+Tutoriel : 
+s://openclassrooms.com/fr/courses/5281406-creez-un-linux-embarque-pour-la-domotique/5464241-emulez-une-raspberry-pi-avec-qemu 
+Installer qemu : 
+    $ sudo apt-get install qemu-system-arm
+Voir les plateformes supportés
+    $ qemu-system-arm -machine help
+Lister les processeurs supportés par l’émulateur pour cette plateforme
+    $ qemu-system-arm -machine raspi2 -cpu help
+
+On fini par rencontré un message d'erreur:
+
+root@debianMikachu:~# qemu-system-arm 
+-M raspi2 -cpu cortex-a7 
+-append "rw earlyprintk loglevel=8 dwc_otg.lpm_enable=0 root=/dev/mmcblk0p2" 
+-dtb bcm2709-rpi-2-b.dtb 
+-drive file=~/2018-04-18-raspbian-stretch-lite.img,if=sd,format=raw 
+-kernel ~/kernel7.img 
+-m 1G 
+-smp 4
+No protocol specified
+
+(qemu-system-arm:3530): dbind-WARNING **: 11:10:04.850: Could not open X display
+qemu-system-arm: Unable to copy device tree in memory
+Couldn't open dtb file bcm2709-rpi-2-b.dtb
+    
+    \end{verbatim}
 
 \end{document}
