@@ -175,17 +175,19 @@
             
     
     \chapter{Réalisation Software-Hardware}
-        \section{Acquisition vidéo}
-            Grâce à la librairie openCV, nous pouvons faire l'acquisition de tout type de caméra, en effet il suffit que la caméra soit branché à l'ordinateur pour qu'on l'utiliser. La lbrairie prend aussi en charge les caméras IP et le fichier vidéo.
-            \\
-            A chaque appel de la fonction capture.read(), la librairie capture l'image du flux vidéo en entré, cette image va ensuite être utilisé pour faire les différents traitements et notamment la détection de chute.
+    \section{Acquisition vidéo}
+        Grâce à la librairie openCV, nous pouvons faire l'acquisition de tout type de caméra, en effet il suffit que la caméra soit branché à l'ordinateur pour qu'on l'utiliser. La lbrairie prend aussi en charge les caméras IP et le fichier vidéo.
+        \\
+        A chaque appel de la fonction capture.read(), la librairie capture l'image du flux vidéo en entré, cette image va ensuite être utilisé pour faire les différents traitements et notamment la détection de chute.
 
-        \section{Détection de chute}
-            La détection se décompose en deux parties, la première consiste à extraire le sujet de la scène et la deuxième étudier son déplacement afin de savoir si oui ou non il y a bien eu une chute.
-            \subsection{Extraction du sujet}
-            Pour extraire le sujet deux méthodes ont été etudiés, la première methode consiste à utiliser une technique de classification. c'est une technique d'apprentissage supervisé. Il faut d'abord créer une base de données afin d'entrainer le modèle pour pouvoir reconnaitre le pattern souhaité. Cette méthode est coûteuse en ressource, mais peut être très efficace si la base de données est grande. Nous avons
-            \subsection{Critère de détection de chute}
-        \section{Reconnaissance faciale}
+    \section{Détection de chute}
+        La détection se décompose en deux parties, la première consiste à extraire le sujet de la scène et la deuxième étudier son déplacement afin de savoir si oui ou non il y a bien eu une chute.
+        \subsection{Extraction du sujet}
+        Pour extraire le sujet deux méthodes ont été etudiés, la première methode consiste à utiliser une technique de classification. Cela consiste à faire de l'apprentissage supervisé.
+        Il faut d'abord créer une base de données afin d'entrainer le modèle pour pouvoir reconnaitre le pattern souhaité. Cette méthode est coûteuse en ressource, mais peut 
+        être très efficace si la base de données est grande.Pour notre prblème utiliser cette méthode n'est pas la mieux adapté. En effet avec la base de donnée inclu dans la librairie openCV permet d'identifier les corps debout, le visage vers la caméra et le corps ne doit pas être partiellement caché par un objet. Pour contrer ce problème, nous avions décider de chercher une base de donnée plus complète ou de créer nous même la base de donnée. Cependant aucune de ses pistes n'a donné de résultat concluant. Nous avons donc suivi une autre méthode pour l'extraction du sujet. Plus simple à appréhender et à coder cette méthode consiste à utiliser la soustraction d'images. En faisant la soustraction de l'image précende avec l'image actuel on isole tous les changement ayant eu lieu entre les deux images et notamment les mouvements d'une personne.  
+        \subsection{Critère de détection de chute}
+    \section{Reconnaissance faciale}
         \section{Interface Graphique}
             Nous avons cherché à créer une interface graphique pour notre porjet qui permette de modifier certains paramètres, de changer la caméra.\\
             Pour réaliser cette interface nous avons utilisé la librairie intégrée de Python, Tkinter. Cette librairie permet de créer des interfaces graphiques assez simplement. Nous pouvons y ajouter des boutons des canvas (rectangle dans lequel nous pouvons placer du contenu).\\
