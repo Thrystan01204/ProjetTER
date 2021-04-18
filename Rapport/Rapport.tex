@@ -32,10 +32,31 @@
     \part{Corps du rapport}
     
     \chapter{Description}
+    
         \section{Définition du projet}
+        
     Le but de ce projet est de réaliser une surveillance vidéo avec deux composantes, la détection de chute et la reconnaissance faciale.
     Pour la détection de chute, lorsqu'une chute sera détecté une alarme sera activé afin d'alerter le personnel soignant. Depuis une interface graphique l'utilisateur pourra visualiser en temps réel le flux vidéo, choisir la caméra, mettre en pause le flux vidéo et désactiver l'alarme. Concernant la reconnaissance faciale, l'utilisateur connaitra le nom et le prénom de la personne si il est enregistré dans la base de données de l'établissement, ce qui permettra de détecter les éventuels intrus.
+    
         \section{Cahier des charges}
+        
+    \underline{Objectifs à atteindre :}\newline
+        CdC minimum, niveau 0 :
+    \begin{itemize}
+        \item Acquisition vidéo pour traitement via IP caméra
+        \item Détection en vidéo via un code de “Machine Learning” d’une chute dans une chambre, du visage d’un patient s’étant égaré
+        \item Interface graphique pour un poste de sécurité, boutons cliquable et visionnage vidéo des chambres
+        \item Système d’alerte sonore et/ou visuelle, désactivé manuellement par un badge magnétique ou par l’interface graphique
+    \end{itemize} 
+        CdC options supplémentaires niveau 1 :
+    \begin{itemize}
+        \item Micro/Haut parleurs pour communiquer patient/poste sécurité
+        \item Localisé le personnel soignant présent sur le complexe hospitalier pour choisir l’intervenant le plus approprié et l’avertir
+    \end{itemize}
+        CdC options supplémentaires niveau 2 :
+    \begin{itemize}
+        \item Relevé des constantes vitale (tension, température, électrocardiogramme) et traitement des infos
+    \end{itemize}
         
         \section{Support Logiciels/ Langage de Programmation/ Librairie}
         
