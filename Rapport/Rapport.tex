@@ -183,7 +183,23 @@
         \section{Piste d'amélioration}
             \subsection{Qualité du matériel}
             \subsection{Résolution du système}
+            
             \subsection{Performance du code et du temps de calcul}
+            
+            Afin de gagner en vitesse de calcul, nous pouvons utiliser une programmation qui utilise
+    les diffèrents coeurs du processeur. En effet, nous utilisons des threads pour parallèliser
+    nos t\^{a}ches, mais en l'état, le système décide lui-m\^{e}me de l'emplacement du calcul.
+    Si on stocke les variables dans un buffer et qu'on affecte un thread à un coeur spcifique, 
+    le temps de calcul serait considérablement diminué. 
+    
+    Nous avons trouvé un tutoriel sur Youtube pour faire du multicore sur un Raspberry Pico.
+    (Tutoriel : Bibliothèque \ref{bib:multicore_pico},p\pageref{bib:multicore_pico})
+    Le Raspberry pico possède 2 coeurs, et est déjà équipé d'une bibliothèque Pico Multicore.
+    Nous n'avons pas trouvé une équivalence pour Raspberry 3B+. 
+
+    Il semble qu'une bibliothèque existe pour pragrammer du multicore, du nom de openMP. 
+    Nous n'avons pas développer plus, étant arriver au terme du projet.
+    
         \section{Timeline (Diagramme de Grantt)}
     
     
@@ -219,6 +235,13 @@
             \emph{Installer OS Raspberry Desktop : machine virtuelle}. \newline
             Consulté le 10/03/2021
             \begin{verbatim}url = https://projects.raspberrypi.org/en/projects/install-raspberry-pi-desktop  
+            \end{verbatim}
+            
+         \bibitem{}\label{bib:multicore_pico}
+            Youtube,
+            \emph{Programmation Multicore Raspberry Pico}. \newline
+            Consulté le 17/04/2021
+            \begin{verbatim}url = https://www.youtube.com/watch?v=aIFElaK14V4  
             \end{verbatim}
 
     \end{thebibliography}
